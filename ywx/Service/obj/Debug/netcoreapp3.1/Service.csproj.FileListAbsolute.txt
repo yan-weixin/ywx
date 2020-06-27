@@ -1,0 +1,12 @@
+E:\efcore1\Service\bin\Debug\netcoreapp3.1\Service.deps.json
+E:\efcore1\Service\bin\Debug\netcoreapp3.1\Service.dll
+E:\efcore1\Service\bin\Debug\netcoreapp3.1\Service.pdb
+E:\efcore1\Service\bin\Debug\netcoreapp3.1\Data.dll
+E:\efcore1\Service\bin\Debug\netcoreapp3.1\Data.pdb
+E:\efcore1\Service\obj\Debug\netcoreapp3.1\Service.csprojAssemblyReference.cache
+E:\efcore1\Service\obj\Debug\netcoreapp3.1\Service.AssemblyInfoInputs.cache
+E:\efcore1\Service\obj\Debug\netcoreapp3.1\Service.AssemblyInfo.cs
+E:\efcore1\Service\obj\Debug\netcoreapp3.1\Service.csproj.CoreCompileInputs.cache
+E:\efcore1\Service\obj\Debug\netcoreapp3.1\Service.csproj.CopyComplete
+E:\efcore1\Service\obj\Debug\netcoreapp3.1\Service.dll
+E:\efcore1\Service\obj\Debug\netcoreapp3.1\Service.pdb

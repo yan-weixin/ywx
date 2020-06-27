@@ -1,0 +1,138 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>添加产品</title>
+    <meta charset="UTF-8" />
+    <!-- import CSS -->
+    <link href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
+          rel="stylesheet" />
+</head>
+<body style="margin: 0;">
+    <el-container id="app">
+        <el-main>
+            <el-row>
+                <el-col>
+                    <el-form :model="product"
+                             label-width="auto"
+                             ref="form">
+                        <el-row>
+                            <el-col>
+                                <el-form-item label="用户名">
+                                    <el-input placeholder="请输入用户名"
+                                              v-model="product.userNumber">
+                                    </el-input>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                        <el-row>
+                            <el-col>
+                                <el-form-item label="密码">
+                                    <el-input placeholder="请输入密码"
+                                              v-model="product.userPassword">
+                                    </el-input>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                        <el-row>
+                            <el-col>
+                                <el-form-item label="邮箱">
+                                    <el-input placeholder="请输入邮箱"
+                                              v-model="product.Email">
+                                    </el-input>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                        <el-row>
+                            <el-col>
+                                <el-form-item label="性别">
+                                    <el-radio-group v-model="product.radio">
+                                        <el-radio label="男"></el-radio>
+                                        <el-radio label="女"></el-radio>
+
+                                    </el-radio-group>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                        <el-row>
+                            <el-col>
+                                <el-form-item label="地址">
+                                    <el-input placeholder="请输入所在地址"
+                                              v-model="product.city">
+                                    </el-input>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                        <el-row>
+                            <el-col>
+                                <el-form-item label="生日">
+                                    <el-input placeholder="请输入生日"
+                                              v-model="product.date">
+                                    </el-input>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                        <el-row>
+                            <el-col style="text-align: center;">
+                                <el-form-item>
+                                    <el-button type="primary"
+                                               v-on:click="onAddButtonClick">
+                                        添加
+                                    </el-button>
+                                    <el-button  v-on:click="onButtonClick" >取消</el-button>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                    </el-form>
+                </el-col>
+            </el-row>
+        </el-main>
+    </el-container>
+    <!-- import Vue before Element -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <!-- import JavaScript -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.js"></script>
+    <script>
+        const app = new Vue({
+            el: "#app",
+            data: {
+                product: {
+                    userNumber: '',
+                    userPassword: '',
+                    Email: '',
+                    radio: '男',
+                    city: '',
+
+                    date: ''
+                }
+            },
+            methods: {
+                async onAddButtonClick() {
+                    const response = await axios.post('/Login/Create', this.product);
+
+                    if (response.data.code === 'success') {
+                        this.$message({
+                            message: '记录插入成功',
+                            type: 'success'
+                        });
+                    } else {
+                        this.$message({
+                            message: '记录插入失败',
+                            type: 'error'
+                        });
+                    }
+                },
+                onButtonClick() {
+                    window.location = "/Login/Index";
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
